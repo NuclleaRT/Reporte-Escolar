@@ -22,7 +22,28 @@ function promedio(){
 
     let promedio = (nota / 5);
 
-    document.getElementById('mostrarResultado').textContent = promedio.toPrecision(2);
+    document.getElementById('mostrarPromedio').textContent = promedio.toPrecision(2);
 }
 
 
+function NotaMayor(){
+    let notaMayor = 0;
+    let i=0;
+    while(i < 5){
+       if(arrayNotas[i] > notaMayor){
+            notaMayor = arrayNotas[i];
+       }
+       i++;
+    }
+    document.getElementById('mostrarNotaAlta').textContent = notaMayor;
+}
+
+function Reprobado(){
+    let i = 0;
+    let notaMenor;
+   do {
+        notaMenor = arrayNotas[i];
+        i++;
+   } while (notaMenor>4);
+    document.getElementById('mostrarResultado').textContent = 'Haz reprobado ya que tienes una nota: ' + notaMenor;
+}
